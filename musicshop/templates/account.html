@@ -1,0 +1,149 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h4 class="text-center">Personal account</h4>
+<hr>
+<div class="row">
+    <div class="col-4">
+        <div class="list-group" id="list-tab" role="tablist">
+            <a class="list-group-item list-group-item-action active" id="list-orders-list" data-bs-toggle="list"
+               href="#list-orders" role="tab" aria-controls="list-orders">Orders</a>
+            <a class="list-group-item list-group-item-action" id="list-wishlist-list" data-bs-toggle="list"
+               href="#list-wishlist" role="tab" aria-controls="list-wishlist">Waiting list</a>
+        </div>
+    </div>
+    <div class="col-8">
+        <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="list-orders" role="tabpanel" aria-labelledby="list-orders-list">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">Order number</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Amount</th>
+                        <th scope="col">Details</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for order in customer.orders.all %}
+                    <tr>
+                        <th scope="row">{{ order.id }}</th>
+                        <td>{{ order.get_status_display }}</td>
+                        <td>{{ order.cart.final_price }} euro.</td>
+                        <td>
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#orderDetails-{{ order.id }}">Order Details
+                            </button>
+                        </td>
+
+                        <div class="modal fade" id="orderDetails-{{ order.id }}" tabindex="-1"
+                             aria-labelledby="orderDetailsLabel-{{ order.id }}" aria-hidden="true">
+                            <div class="modal-dialog modal-xl">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title text-center" id="orderDetailsLabel-{{ order.id }}">
+                                            Order Information #{{ order.id }}
+                                        </h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row">
+
+                                            <div class="col-md-3 text-center mb-2">
+                                                <strong>Artist/album</strong>
+                                            </div>
+                                            <div class="col-md-3 text-center mb-2">
+                                                <strong>Image</strong>
+                                            </div>
+                                            <div class="col-md-3 text-center mb-2">
+                                                <strong>Quantity</strong>
+                                            </div>
+                                            <div class="col-md-3 text-center mb-2">
+                                                <strong>Total price</strong>
+                                            </div>
+                                            <hr>
+                                            {% for item in order.cart.products.all %}
+                                            <div class="col-md-3 mb-3 text-center">
+                                                <strong>
+                                                    <a href="{{ item.content_object.artist.get_absolute_url }}"
+                                                       class="text-decoration-none">
+                                                        {{ item.content_object.artist.name }}
+                                                    </a> - <a href="{{ item.content_object.get_absolute_url }}"
+                                                              class="text-decoration-none">
+                                                    {{ item.content_object.name }}
+                                                </a>
+                                                </strong>
+
+                                            </div>
+                                            <div class="col-md-3 mb-3 text-center">
+                                                <img src="{{ item.content_object.image.url }}" class="img-fluid">
+                                            </div>
+                                            <div class="col-md-3 mb-3 text-center">
+                                                {{ item.qty }} pc.
+                                            </div>
+                                            <div class="col-md-3 mb-3 text-center">
+                                                {{ item.final_price }} euro.
+                                            </div>
+                                            {% endfor %}
+
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                            Close
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <div class="tab-pane fade" id="list-wishlist" role="tabpanel" aria-labelledby="list-wishlist-list">
+                <div class="row">
+                    {% for album in customer.wishlist.all %}
+                    <div class="card col-md-4 p-0 mb-3 mt-3">
+                        <img src="{{ album.image.url }}" class="card-img-top">
+                        <div class="card-body text-center">
+                            <h5 class="card-title"><a href="{{ album.artist.get_absolute_url }}"
+                                                      class="text-decoration-none">
+                                {{ album.artist.name }}
+                            </a></h5>
+                            <h5 class="card-title"><a href="{{ album.get_absolute_url }}" class="text-decoration-none">
+                                {{ album.name }}
+                            </a></h5>
+                        </div>
+
+                        <ul class="list-group list-group-flush">
+
+                            <li class="list-group-item">
+                                Carrier: <strong>{{ album.media_type.name }}</strong>
+                            </li>
+                            <li class="list-group-item">
+                                Release date: <strong>{{ album.release_date|date:"d-m-Y" }}</strong>
+                            </li>
+                            <li class="list-group-item">
+                                Genre : <strong class="badge bg-dark">{{ album.artist.genre.name }}</strong>
+                            </li>
+                            <li class="list-group-item">
+                                Availability: {% if album.stock %}<strong class="badge bg-success">
+                                Available in stock</strong>{% else %}
+                                <strong class="badge bg-danger">Out of stock</strong>{% endif %}
+                            </li>
+                        </ul>
+                        <div class="card-body text-center">
+                            <a href="{% url 'remove_from_wishlist' album_id=album.id %}"
+                               class="btn btn-danger">Remove from Expected <i class="fas fa-star"></i></a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
