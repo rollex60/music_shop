@@ -7,6 +7,8 @@ This README would normally document whatever steps are necessary to get your app
 
 image ![Alt text](https://bitbucket.org/django-4/musicshop/src/master/images/musicshop.png)
 
+image1 ![Alt text](C:\Users\rollex\PycharmProjects\musicshop\application\images\musicshop.png)
+
 * Quick summary
 * Version
 * [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
