@@ -3,7 +3,7 @@
 This README would normally document whatever steps are necessary to get your application up and running.
 
 ### What is this repository for? ###
-
+(https://bitbucket.org/django-4/musicshop/src/master/images/musicshop.png)
 * Quick summary
 * Version
 * [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
