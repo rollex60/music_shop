@@ -5,13 +5,13 @@ This README would normally document whatever steps are necessary to get your app
 ### What is this repository for? ###
 
 
-image ![Alt text](https://bitbucket.org/django-4/musicshop/src/master/images/musicshop.png)
+image ![Alt text](/musicshop/src/master/images/musicshop.png)
 
 image1 ![Alt text](C:\Users\rollex\PycharmProjects\musicshop\application\images\musicshop.png)
 
 ![alt text](https://bitbucket.org/[django-4]/[musicshop]/src/[master]/images/musicshop.png?raw=true)
 
-![alt text](https://bitbucket.org/django-4/musicshop/src/master/images/musicshop.png?raw=true)
+![alt text](/musicshop/src/master/images/musicshop.png?raw=true)
 
 * Quick summary
 * Version
