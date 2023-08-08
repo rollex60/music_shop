@@ -8,7 +8,7 @@ This README would normally document whatever steps are necessary to get your app
 <img src="/path/to/images/musicshop.png" alt="Alt text" title="Optional title">
 
 
-image ![Alt text](../images/musicshop.png)
+image ![Alt text](images/musicshop.png)
 
 image1 ![Alt text](C:\Users\rollex\PycharmProjects\musicshop\application\images\musicshop.png)
 
