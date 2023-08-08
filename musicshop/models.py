@@ -130,7 +130,7 @@ class Album(models.Model):
     objects = AlbumManager()
 
     def __str__(self):
-        return f"{self.id} | {self.artist.name} | {self.name}"
+        return f"{self.artist.name} | {self.name}"
 
     @property
     def ct_model(self):
