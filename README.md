@@ -3,9 +3,12 @@
 This README would normally document whatever steps are necessary to get your application up and running.
 
 ### What is this repository for? ###
+"<img src="/path/to/img.jpg" alt="Alt text" title="Optional title">"
+
+<img src="/path/to/images/musicshop.png" alt="Alt text" title="Optional title">
 
 
-image ![Alt text](/musicshop/src/master/images/musicshop.png)
+image ![Alt text](../images/musicshop.png)
 
 image1 ![Alt text](C:\Users\rollex\PycharmProjects\musicshop\application\images\musicshop.png)
 
