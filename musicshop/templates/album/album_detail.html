@@ -35,7 +35,7 @@
                     {% else %}
                     <strong class="badge dg-danger">Out of stock</strong>{% endif %}
                     </p>
-                    <div class="card-body text-center">
+                    <div class="text-left">
                     {% if request.user.is_authenticated %}
                     {% if album.stock %}
                     {% if album not in cart.products_in_cart %}
@@ -46,7 +46,7 @@
 
                     </a>
                     {% else %}
-                    <a href="#" class="btn btn-default" disabled="">
+                    <a href="#" class="btn-default" disabled="">
                         <button class="btn btn-primary">
                             Added to cart
                         </button>
@@ -67,6 +67,7 @@
                         they can carry out orders.
                     </a>
                     {% endif %}
+                    <div class=" me-auto my-0">Price: <strong>{{ album.price}}</strong></div>
                 </div>
                 </div>
             </div>

@@ -1,24 +1,29 @@
 # README #
 
-This README would normally document whatever steps are necessary to get your application up and running.
-
 ### What is this repository for? ###
-"<img src="/path/to/img.jpg" alt="Alt text" title="Optional title">"
-
-<img src="/path/to/images/musicshop.png" alt="Alt text" title="Optional title">
 
 
-image ![Alt text](images/musicshop.png)
+[Alt text](https://bitbucket.org/django-4/musicshop/raw/cf80ffc41f8369f8d84d9ea54a0c7edee3086122/images/musicshop.png)
 
-image1 ![Alt text](C:\Users\rollex\PycharmProjects\musicshop\application\images\musicshop.png)
+### Cart ###
 
-![alt text](https://bitbucket.org/[django-4]/[musicshop]/src/[master]/images/musicshop.png?raw=true)
+[Alt text](https://bitbucket.org/django-4/musicshop/raw/cf80ffc41f8369f8d84d9ea54a0c7edee3086122/images/musicshop1.png)
 
-![alt text](/musicshop.png?raw=true)
+### Performers ###
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+[Alt text](https://bitbucket.org/django-4/musicshop/raw/cf80ffc41f8369f8d84d9ea54a0c7edee3086122/images/musicshop2.png)
+
+### Album ###
+
+[Alt text](https://bitbucket.org/django-4/musicshop/raw/cf80ffc41f8369f8d84d9ea54a0c7edee3086122/images/musicshop3.png)
+
+### Personal account (Orders) ###
+
+[Alt text](https://bitbucket.org/django-4/musicshop/raw/cf80ffc41f8369f8d84d9ea54a0c7edee3086122/images/musicshop4.png)
+
+### Personal account (Waiting list) ###
+
+[Alt text](https://bitbucket.org/django-4/musicshop/raw/cf80ffc41f8369f8d84d9ea54a0c7edee3086122/images/musicshop5.png)
 
 ### How do I get set up? ###
 
