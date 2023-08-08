@@ -9,7 +9,9 @@ image ![Alt text](https://bitbucket.org/django-4/musicshop/src/master/images/mus
 
 image1 ![Alt text](C:\Users\rollex\PycharmProjects\musicshop\application\images\musicshop.png)
 
-![alt text](https://bitbucket.org/[django-4]/[musicshop]/src/[master]/musicshop.png?raw=true)
+![alt text](https://bitbucket.org/[django-4]/[musicshop]/src/[master]/images/musicshop.png?raw=true)
+
+![alt text](https://bitbucket.org/django-4/musicshop/src/master/images/musicshop.png?raw=true)
 
 * Quick summary
 * Version
