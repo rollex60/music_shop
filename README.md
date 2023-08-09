@@ -1,46 +1,31 @@
 # README #
 
-### What is this repository for? ###
+## Music shop with albums and performers. ##
 
+Music shop have images performers with titles the performers and titles albums. Price to albom with genre, carrier and relise date
 
 ![Alt text](https://bitbucket.org/django-4/musicshop/raw/610eb4eb80311f8adcb31853fd32086cf7443728/images/musicshop.png)
 
-### Cart ###
+## Shopping cart ##
+
+With image, price and quantity
 
 ![Alt text](https://bitbucket.org/django-4/musicshop/raw/610eb4eb80311f8adcb31853fd32086cf7443728/images/musicshop1.png)
 
-### Performers ###
+## Performers ##
+
+In performers have image, genre, description and image gallery.
 
 ![Alt text](https://bitbucket.org/django-4/musicshop/raw/610eb4eb80311f8adcb31853fd32086cf7443728/images/musicshop2.png)
 
-### Album ###
+## Album ##
 
 ![Alt text](https://bitbucket.org/django-4/musicshop/raw/610eb4eb80311f8adcb31853fd32086cf7443728/images/musicshop3.png)
 
-### Personal account (Orders) ###
+## Personal account (Orders) ##
 
 ![Alt text](https://bitbucket.org/django-4/musicshop/raw/610eb4eb80311f8adcb31853fd32086cf7443728/images/musicshop4.png)
 
-### Personal account (Waiting list) ###
+## Personal account (Waiting list) ##
 
 ![Alt text](https://bitbucket.org/django-4/musicshop/raw/610eb4eb80311f8adcb31853fd32086cf7443728/images/musicshop5.png)
-
-### How do I get set up? ###
-
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
-
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
