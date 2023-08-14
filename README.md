@@ -17,7 +17,6 @@ With image, price and quantity
 In performers have image, genre, description and image gallery.
 
 ![Alt text](https://bitbucket.org/django-4/musicshop/raw/3e957c6ca74cb6da25dd54ad1122a6a63fe6d44b/images/music_shop_artist.png)
-![Alt text](https://bitbucket.org/django-4/musicshop/raw/3e957c6ca74cb6da25dd54ad1122a6a63fe6d44b/images/music_shop_artist1.png)
 
 ## Album ##
 
