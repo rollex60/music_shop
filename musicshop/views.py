@@ -15,7 +15,7 @@ from utils import recalc_cart
 class BaseView(CartMixin, NotificationsMixin, views.View):
 
     def get(self, request, *args, **kwargs):
-        albums = Album.objects.all().order_by('-id')[:5]
+        albums = Album.objects.all().order_by('-id')[:8]
         month_bestseller, month_bestseller_qty = Album.objects.get_month_bestseller()
         context = {
             'albums': albums,
@@ -27,7 +27,7 @@ class BaseView(CartMixin, NotificationsMixin, views.View):
         return render(request, 'base.html', context)
 
 
-class ArtistDetailView(NotificationsMixin, views.generic.DetailView):
+class ArtistDetailView(CartMixin, NotificationsMixin, views.generic.DetailView):
     model = Artist
     template_name = 'artist/artist_detail.html'
     slug_url_kwarg = 'artist_slug'

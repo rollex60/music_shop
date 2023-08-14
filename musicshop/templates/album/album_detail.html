@@ -24,18 +24,19 @@
 
             <div class="col-md-8">
                 <div class="col-md-8">
-                    <h4>{{ album.artist.name }} - {{ album.name }}</h4>
+                    <h4 class="text-warning bg-dark">{{ album.artist.name }} - {{ album.name }}</h4>
                     <hr>
-                    <p>Release date: {{ album.release_date|date:"d-m-Y" }}</p>
-                    <p>Genre: {{ album.artist.genre.name }}</p>
-                    <p>Description: {{ album.description }}</p>
-                    <p>Availability: {% if album.stock %} <strong class="badge bg-success">
-                        Available in stock - {{ album.stock }} шт.
+                    <ul>
+                    <li class="list-group-item">Release date: {{ album.release_date|date:"d-m-Y" }}</li>
+                    <li class="list-group-item">Genre: {{ album.artist.genre.name }}</li>
+                    <li class="list-group-item">Description: {{ album.description }}</li>
+                    <li class="list-group-item">Availability: {% if album.stock %} <strong class="badge bg-success">
+                        {{ album.stock }} pcs.
                     </strong>
                     {% else %}
                     <strong class="badge dg-danger">Out of stock</strong>{% endif %}
-                    </p>
-                    <div class="text-left">
+                    </li>
+                    <div class="list-group-item bg-dark">
                     {% if request.user.is_authenticated %}
                     {% if album.stock %}
                     {% if album not in cart.products_in_cart %}
@@ -66,13 +67,16 @@
                         Log in or register, only authorized users
                         they can carry out orders.
                     </a>
+                
                     {% endif %}
-                    <div class=" me-auto my-0">Price: <strong>{{ album.price}}</strong></div>
+                    <div class="me-auto my-0 text-warning">$ <strong>{{ album.price}}</strong></div>
                 </div>
                 </div>
+            </ul>
             </div>
         </div>
     </div>
+
 
   <h5 class="mt-3">Image Gallery</h5>
     <div class="row">

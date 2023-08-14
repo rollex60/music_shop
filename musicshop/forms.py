@@ -10,7 +10,7 @@ class OrderForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields['order_date'].label = 'Дата получения заказа'
+        self.fields['order_date'].label = 'Date of receipt of the order'
 
     order_date = forms.DateField(widget=forms.TextInput(attrs={'type': 'date'}))
 
@@ -31,17 +31,17 @@ class LoginForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields['username'].label = 'Логин'
-        self.fields['password'].label = 'Пароль'
+        self.fields['username'].label = 'Login'
+        self.fields['password'].label = 'Password'
 
     def clean(self):
         username = self.cleaned_data['username']
         password = self.cleaned_data['password']
         user = User.objects.filter(username=username).first()
         if not user:
-            raise forms.ValidationError(f'Пользователь с логином {username} не найден в системе')
+            raise forms.ValidationError(f'User with login {username} not found in the system')
         if not user.check_password(password):
-            raise forms.ValidationError('Неверный пароль')
+            raise forms.ValidationError('Incorrect password')
         return self.cleaned_data
 
 
@@ -55,35 +55,35 @@ class RegistrationForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields['username'].label = 'Логин'
-        self.fields['password'].label = 'Пароль'
-        self.fields['confirm_password'].label = 'Подтвердите пароль'
-        self.fields['phone'].label = 'Номер телефона'
-        self.fields['address'].label = 'Адрес'
-        self.fields['email'].label = 'Почта'
-        self.fields['first_name'].label = 'Имя'
-        self.fields['last_name'].label = 'Фамилия'
+        self.fields['username'].label = 'Login'
+        self.fields['password'].label = 'Password'
+        self.fields['confirm_password'].label = 'Confirm the password'
+        self.fields['phone'].label = 'Phone number'
+        self.fields['address'].label = 'Address'
+        self.fields['email'].label = 'E-mail'
+        self.fields['first_name'].label = 'Name'
+        self.fields['last_name'].label = 'Surname'
 
     def clean_email(self):
         email = self.cleaned_data['email']
         domain = email.split('.')[-1]
         if domain in ['net', 'xyz']:
-            raise forms.ValidationError(f'Регистрация для домена {domain} невозможна')
+            raise forms.ValidationError(f'Registration for a domain {domain} impossible')
         if User.objects.filter(email=email).exists():
-            raise forms.ValidationError('Данный почтовый адрес уже зарегистрирован')
+            raise forms.ValidationError('This mailing address is already registered')
         return email
 
     def clean_username(self):
         username = self.cleaned_data['username']
         if User.objects.filter(username=username).exists():
-            raise forms.ValidationError(f'Имя {username} занято. Попробуйте другое.')
+            raise forms.ValidationError(f'Name {username} busy. Try another.')
         return username
 
     def clean(self):
         password = self.cleaned_data['password']
         confirm_password = self.cleaned_data['confirm_password']
         if password != confirm_password:
-            raise forms.ValidationError('Пароли не совпадают')
+            raise forms.ValidationError('Password mismatch')
         return self.cleaned_data
 
     class Meta:

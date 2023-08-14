@@ -1,0 +1,36 @@
+body {
+    height: 100%;
+    background: linear-gradient( rgba(28, 25, 25, 80%), rgba(0, 0, 0, 0.5) ), url('../media/images/body.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: top;
+}
+
+.container {
+    padding-bottom: -90px;
+}
+
+footer {
+	/* position: absolute; */
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100% !important;
+    background-color: #212529!important;
+}
+
+strong, h5, ul, li, a {
+    color: #ffc107!important;
+    background-color: #212529!important;
+}
+
+.card {
+    border: 6px solid #000;
+    border-radius: 25px;
+}
+
+.navbar {
+    color: #ffc107!important;
+    background-color: #212529!important;
+}

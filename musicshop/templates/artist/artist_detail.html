@@ -14,13 +14,13 @@
             <img src="{{ artist.image.url }}" class="img-fluid">
         </div>
         <div class="col-md-8">
-            <h4>{{ artist.name }}</h4>
+            <h4 class="text-warning bg-dark">{{ artist.name }}</h4>
             <hr>
             <ul>
                 {% for member in artist.members.all %}
-                <li>Genre: {{ artist.genre.name }}</li>
-                <li>Participants: {{ member.name }}</li>
-                <li>Description: {{ artist.description }}</li>
+                <li class="list-group-item">Genre: {{ artist.genre.name }}</li>
+                <li class="list-group-item">Participants: {{ member.name }}</li>
+                <li class="list-group-item">Description: {{ artist.description }}</li>
 
                 {% endfor %}
             </ul>
