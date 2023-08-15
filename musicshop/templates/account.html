@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<h4 class="text-center">Personal account</h4>
+<h4 class="text-center text-warning">Personal account</h4>
 <hr>
 <div class="row">
     <div class="col-4">
@@ -19,18 +19,18 @@
                 <table class="table">
                     <thead>
                     <tr>
-                        <th scope="col">Order number</th>
-                        <th scope="col">Status</th>
-                        <th scope="col">Amount</th>
-                        <th scope="col">Details</th>
+                        <th scope="col" class="text-warning">Order number</th>
+                        <th scope="col" class="text-warning">Status</th>
+                        <th scope="col" class="text-warning">Amount</th>
+                        <th scope="col" class="text-warning">Details</th>
                     </tr>
                     </thead>
                     <tbody>
                     {% for order in customer.orders.all %}
                     <tr>
-                        <th scope="row">{{ order.id }}</th>
-                        <td>{{ order.get_status_display }}</td>
-                        <td>{{ order.cart.final_price }} euro.</td>
+                        <th scope="row" class="text-warning">{{ order.id }}</th>
+                        <td class="text-warning">{{ order.get_status_display }}</td>
+                        <td class="text-warning">{{ order.cart.final_price }} euro.</td>
                         <td>
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                                     data-bs-target="#orderDetails-{{ order.id }}">Order Details
@@ -40,7 +40,7 @@
                         <div class="modal fade" id="orderDetails-{{ order.id }}" tabindex="-1"
                              aria-labelledby="orderDetailsLabel-{{ order.id }}" aria-hidden="true">
                             <div class="modal-dialog modal-xl">
-                                <div class="modal-content">
+                                <div class="modal-content bg-dark">
                                     <div class="modal-header">
                                         <h5 class="modal-title text-center" id="orderDetailsLabel-{{ order.id }}">
                                             Order Information #{{ order.id }}
@@ -104,11 +104,10 @@
                 </table>
             </div>
             <div class="tab-pane fade" id="list-wishlist" role="tabpanel" aria-labelledby="list-wishlist-list">
-                <div class="row">
                     {% for album in customer.wishlist.all %}
-                    <div class="card col-md-4 p-0 mb-3 mt-3">
+                    <div class="card col-md-5 rounded shadow-sm bg-dark">
                         <img src="{{ album.image.url }}" class="card-img-top">
-                        <div class="card-body text-center">
+                        <div class="card-body text-center bg-dark">
                             <h5 class="card-title"><a href="{{ album.artist.get_absolute_url }}"
                                                       class="text-decoration-none">
                                 {{ album.artist.name }}
@@ -117,31 +116,42 @@
                                 {{ album.name }}
                             </a></h5>
                         </div>
-
+                        <div class="border border-warning d-flex">
                         <ul class="list-group list-group-flush">
-
-                            <li class="list-group-item">
-                                Carrier: <strong>{{ album.media_type.name }}</strong>
+                            <li class="list-group-item bi bi-vinyl"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-boombox" viewBox="0 0 16 16">
+                                <path d="M2.5 5a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1Zm2 0a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1Zm7.5-.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Zm1.5.5a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1Zm-7-1a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3Zm5.5 6.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Z"/>
+                                <path d="M11.5 13a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Zm0-1a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3ZM5 10.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Z"/>
+                                <path d="M7 10.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0Zm-1 0a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0Z"/>
+                                <path d="M14 0a.5.5 0 0 1 .5.5V2h.5a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h12.5V.5A.5.5 0 0 1 14 0ZM1 3v3h14V3H1Zm14 4H1v7h14V7Z"/>
+                              </svg> <strong class="text-warning">{{ album.media_type.name }}</strong></li>
+                            <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-calendar2-check" viewBox="0 0 16 16">
+                                <path d="M10.854 8.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+                                <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z"/>
+                                <path d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z"/>
+                              </svg> <strong class="text-warning">{{ album.release_date|date:"d-m-Y" }}</strong>
                             </li>
-                            <li class="list-group-item">
-                                Release date: <strong>{{ album.release_date|date:"d-m-Y" }}</strong>
-                            </li>
-                            <li class="list-group-item">
-                                Genre : <strong class="badge bg-dark">{{ album.artist.genre.name }}</strong>
-                            </li>
-                            <li class="list-group-item">
-                                Availability: {% if album.stock %}<strong class="badge bg-success">
-                                Available in stock</strong>{% else %}
+                        </ul>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-music-note-beamed" viewBox="0 0 16 16">
+                                <path d="M6 13c0 1.105-1.12 2-2.5 2S1 14.105 1 13c0-1.104 1.12-2 2.5-2s2.5.896 2.5 2zm9-2c0 1.105-1.12 2-2.5 2s-2.5-.895-2.5-2 1.12-2 2.5-2 2.5.895 2.5 2z"/>
+                                <path fill-rule="evenodd" d="M14 11V2h1v9h-1zM6 3v10H5V3h1z"/>
+                                <path d="M5 2.905a1 1 0 0 1 .9-.995l8-.8a1 1 0 0 1 1.1.995V3L5 4V2.905z"/>
+                              </svg> <strong>{{ album.artist.genre.name }}</strong></li>
+                            <li class="list-group-item list-group-flush">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-ui-checks-grid" viewBox="0 0 16 16">
+                                    <path d="M2 10h3a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1zm9-9h3a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-3a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zm0 9a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-3zm0-10a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h3a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2h-3zM2 9a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h3a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H2zm7 2a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-3a2 2 0 0 1-2-2v-3zM0 2a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm5.354.854a.5.5 0 1 0-.708-.708L3 3.793l-.646-.647a.5.5 0 1 0-.708.708l1 1a.5.5 0 0 0 .708 0l2-2z"/>
+                                  </svg> {% if album.stock %}<strong class="badge bg-success">
+                                {{ album.stock }} pcs.{% else %}
                                 <strong class="badge bg-danger">Out of stock</strong>{% endif %}
                             </li>
                         </ul>
-                        <div class="card-body text-center">
+                    </div>
+                        <div class="card-body text-center bg-dark">
                             <a href="{% url 'remove_from_wishlist' album_id=album.id %}"
-                               class="btn btn-danger">Remove from Expected <i class="fas fa-star"></i></a>
-                        </div>
+                               class="btn btn-warning bg-warning text-white">Remove from Expected <i class="fas fa-star"></i></a>
+                            </div>
                     </div>
                     {% endfor %}
-                </div>
             </div>
         </div>
     </div>
