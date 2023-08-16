@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # README #
 
 ## Music shop with albums and performers. ##
@@ -25,15 +24,12 @@ In performers have image, genre, description and image gallery.
 
 ## Personal account (Orders) ##
 
-![Alt text](https://bitbucket.org/django-4/musicshop/raw/610eb4eb80311f8adcb31853fd32086cf7443728/images/musicshop4.png)
+![Alt text](https://bitbucket.org/django-4/musicshop/raw/eb962a3f9ffee61e2cddd0174ec7efd192e47887/images/music_shop_order_info.png)
 
 ## Personal account (Waiting list) ##
 
-![Alt text](https://bitbucket.org/django-4/musicshop/raw/610eb4eb80311f8adcb31853fd32086cf7443728/images/musicshop5.png)
+![Alt text](https://bitbucket.org/django-4/musicshop/raw/eb962a3f9ffee61e2cddd0174ec7efd192e47887/images/music_shop_whish.png)
 
 ## Admin ##
 
 ![Alt text](https://bitbucket.org/django-4/musicshop/raw/3e957c6ca74cb6da25dd54ad1122a6a63fe6d44b/images/music_shop_admin.png)
-=======
-# music_shop
->>>>>>> f630090ee01bd7d0326bb39db344e19686633c1d
