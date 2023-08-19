@@ -2,13 +2,13 @@
 
 ## Music shop with albums and performers. ##
 
-Music shop have images performers with titles the performers and titles albums. Price to albom with genre, carrier and relise date
+Music shop have images performers with titles the performers and titles albums. Price to albom with genre, carrier and relise date.
 
 ![Alt text](https://bitbucket.org/django-4/musicshop/raw/3e957c6ca74cb6da25dd54ad1122a6a63fe6d44b/images/music_shop.png)
 
 ## Shopping cart ##
 
-With image, price and quantity
+With image, price and quantity.
 
 ![Alt text](https://bitbucket.org/django-4/musicshop/raw/3e957c6ca74cb6da25dd54ad1122a6a63fe6d44b/images/music_shop_cart.png)
 
